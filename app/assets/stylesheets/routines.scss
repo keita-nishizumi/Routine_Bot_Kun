@@ -2,3 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+table.index_table {
+  background-color: black;
+  position: relative;
+  top: 2.8rem;
+}
+
+th {
+  font-weight: bold;
+}
+
+td.select {
+  text-align: center;
+}
+
+.cell {
+  background-color: azure;
+  padding: 8px 10px;
+}
+
+td > a {
+  text-decoration: underline;
+}
