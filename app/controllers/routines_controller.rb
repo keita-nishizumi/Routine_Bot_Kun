@@ -1,8 +1,7 @@
 class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:edit, :update]
+  before_action :set_routine, only: [:edit, :update, :show]
 
   def index
-    # TODO: 後からログインしているユーザのルーティン一覧のみ取得するように改変する
     @routines = Routine.includes(:routine_users).where(user_id: current_user).where('routine_users.user_id': [current_user, nil]).references(:routine_users)
   end
 
@@ -18,8 +17,10 @@ class RoutinesController < ApplicationController
   end
 
   def update
-    binding.pry
     @routine.update(routine_params)
+  end
+
+  def show
   end
 
   private

@@ -468,7 +468,7 @@ ul li {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 660px;
+  max-width: 80vw;
   *zoom: 1;
 }
 
@@ -719,6 +719,7 @@ header.header div.header__bar.row div.grid-6 a.post {
 header.header div.header__bar.row div.grid-6 a.post:hover {
   border-color: #9bdbf2;
   color: #9bdbf2;
+  cursor: pointer;
 }
 
 .title {
