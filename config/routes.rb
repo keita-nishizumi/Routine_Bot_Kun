@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   root to: "routine_users#index"
   resources :routines do
     resources :routine_users, only:[:index, :new, :create, :edit, :update]
+    collection do
+      get 'search'
+    end
   end
 end
