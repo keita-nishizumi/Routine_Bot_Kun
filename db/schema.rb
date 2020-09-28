@@ -10,14 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_125055) do
+ActiveRecord::Schema.define(version: 2020_09_26_233756) do
+
+  create_table "check_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "routine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["routine_id"], name: "index_check_lists_on_routine_id"
+  end
+
+  create_table "routine_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "routine_id", null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.time "time"
+    t.index ["routine_id"], name: "index_routine_users_on_routine_id"
+    t.index ["user_id"], name: "index_routine_users_on_user_id"
+  end
 
   create_table "routines", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "description"
-    t.date "start_date", null: false
-    t.date "end_date"
-    t.time "time"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,4 +54,7 @@ ActiveRecord::Schema.define(version: 2020_09_24_125055) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "check_lists", "routines"
+  add_foreign_key "routine_users", "routines"
+  add_foreign_key "routine_users", "users"
 end
