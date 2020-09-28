@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "routine_users#index"
   resources :routines do
-    resources :routine_users, only:[:index, :new, :create]
+    resources :routine_users, only:[:index, :new, :create, :edit, :update]
   end
 end

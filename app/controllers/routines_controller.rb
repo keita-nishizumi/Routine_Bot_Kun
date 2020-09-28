@@ -1,4 +1,5 @@
 class RoutinesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_routine, only: [:edit, :update, :show]
 
   def index
@@ -31,4 +32,5 @@ class RoutinesController < ApplicationController
   def set_routine
     @routine = Routine.find(params[:id])
   end
+
 end
