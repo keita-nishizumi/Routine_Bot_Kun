@@ -1,0 +1,22 @@
+<tr>
+  <td class="cell">
+    <% if routine_user.time %>
+      <%= link_to "#{routine_user.time.strftime("%H:%M")}", edit_routine_routine_user_path(routine_user.routine, routine_user) %>
+    <% else %>
+      -
+    <% end %>
+  </td>
+  <td class="cell">
+    <%= link_to "#{routine_user.routine.name}" ,routine_path(routine_user.routine_id) %>
+  </td>
+  <td class="cell">
+    <ul>
+      <li><input type="checkbox">
+      お見積もり</li>
+      <li><input type="checkbox">
+      お見積もり</li>
+      <li><input type="checkbox">
+      お見積もり</li>
+    </ul>
+  </td>
+</tr>

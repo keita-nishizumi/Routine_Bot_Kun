@@ -1,0 +1,12 @@
+<% if routine_user.time %>
+  <%= routine_user.time.strftime("%H:%M") %>
+<% else %>
+  --:--
+<% end %>
+<% if routine_user.start_date %>
+  , From: <%= routine_user.start_date.strftime("%F") %>
+<% end %>
+<% if routine_user.end_date %>
+  , To: <%= routine_user.end_date.strftime("%F") %>
+<% end %>
+<%= link_to 'edit', edit_routine_routine_user_path(routine_user.routine, routine_user) %>
