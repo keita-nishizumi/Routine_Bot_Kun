@@ -1,15 +1,5 @@
+<%= render partial: "search", locals: { path: search_routines_path, placeholder_text: "your routines" } %>
 <div class="contents row routine_index">
   <h1 class="grid-6 page_title">My routines</h1>
-  <table border cellpadding="4 8" class="index_table">
-    <tr>
-      <th class="cell">Select</th>
-      <th class="cell">Edit</th>
-      <th class="cell">Name</th>
-      <th class="cell">Description</th>
-      <th class="cell">Time & Period</th>
-    </tr>
-    <% @routines.each do |routine| %>
-      <%= render partial: "routine", locals: { routine: routine } %>
-    <% end %>
-  </table>
+  <%= render partial: "table", locals: { routines: @routines } %>
 </div>

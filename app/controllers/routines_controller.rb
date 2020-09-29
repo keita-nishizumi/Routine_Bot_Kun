@@ -3,7 +3,7 @@ class RoutinesController < ApplicationController
   before_action :set_routine, only: [:edit, :update, :show]
 
   def index
-    @routines = Routine.includes(:routine_users).where(user_id: current_user).where('routine_users.user_id': [current_user, nil]).references(:routine_users)
+    @routines = Routine.includes(:routine_users).where(user_id: current_user).where('routine_users.user_id': [current_user, nil]).references(:routine_users).order("routine_users.start_date ASC, routine_users.time ASC")
   end
 
   def new
@@ -22,6 +22,10 @@ class RoutinesController < ApplicationController
   end
 
   def show
+  end
+
+  def search
+    @routines = Routine.search(params[:keyword])
   end
 
   private
