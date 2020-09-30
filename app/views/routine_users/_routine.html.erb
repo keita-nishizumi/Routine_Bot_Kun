@@ -11,12 +11,9 @@
   </td>
   <td class="cell">
     <ul>
-      <li><input type="checkbox">
-      お見積もり</li>
-      <li><input type="checkbox">
-      お見積もり</li>
-      <li><input type="checkbox">
-      お見積もり</li>
+      <% if routine_user.routine.check_list %>
+        <%= render partial: "check_items", locals: { check_list: routine_user.routine.check_list } %>
+      <% end %>
     </ul>
   </td>
 </tr>

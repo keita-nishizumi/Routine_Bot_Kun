@@ -6,12 +6,7 @@
   <div class="container">
     <h3>Check Lists</h3>
     <ul>
-      <li><input type="checkbox">
-      お見積もり</li>
-      <li><input type="checkbox">
-      お見積もり</li>
-      <li><input type="checkbox">
-      お見積もり</li>
+      <%= render partial: "routine_users/check_items", locals: { check_list: @routine.check_list } %>
       <li><a class="btn">Add New</a></li>
     </ul>
   </div>
