@@ -3,7 +3,7 @@
     <%= check_box_tag 'selected', routine.id, checked = false %>
   </td>
   <td class="cell">
-    <%= link_to 'edit', edit_routine_path(routine) %>
+    <%= link_to 'edit', edit_routine_path(routine), data: { turbolinks: false } %>
   </td>
   <td class="cell">
     <%= routine.name %>

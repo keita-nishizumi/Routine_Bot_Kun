@@ -1,10 +1,6 @@
 <%= form.text_field :name, placeholder: "Routine name" %>
 <%= form.text_area :description, placeholder: "Description", rows: "10"%>
-<div class="container">
-  <h3>Check Lists</h3>
-  <ul>
-    <%= render partial: "routine_users/check_items", locals: { check_list: @routine.check_list, form: form } %>
-  </ul>
-  <a class="btn" id="add_check_item">Add New</a>
-</div>
+<% if params[:id] %>
+  <%= render partial: "check_list", locals: { check_list: @routine.check_list } %>
+<% end %>
 <%= form.submit "SEND" %>
