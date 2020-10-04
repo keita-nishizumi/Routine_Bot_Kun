@@ -1,0 +1,23 @@
+<tr>
+  <td class="cell select">
+    <%= check_box_tag 'selected', routine.id, checked = false %>
+  </td>
+  <td class="cell">
+    <%= link_to 'edit', edit_routine_path(routine), data: { turbolinks: false } %>
+  </td>
+  <td class="cell">
+    <%= routine.name %>
+  </td>
+  <td class="cell">
+    <%= routine.description %>
+  </td>
+  <td class="cell">
+    <% if routine.routine_users != [] %>
+      <% routine.routine_users.each do |routine_user| %>
+        <%= render partial: 'routine_user', locals: { routine_user: routine_user } %><br />
+      <% end %>
+    <% else %>
+      <%= link_to 'Set time & period', new_routine_routine_user_path(routine), method: :get %>
+    <% end %>
+  </td>
+</tr>

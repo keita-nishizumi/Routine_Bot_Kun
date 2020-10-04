@@ -34,7 +34,7 @@ class RoutinesController < ApplicationController
   end
 
   def set_routine
-    @routine = Routine.find(params[:id])
+    @routine = Routine.includes(:check_list => :check_items).find(params[:id])
   end
 
 end

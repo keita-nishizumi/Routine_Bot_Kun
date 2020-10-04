@@ -1,0 +1,24 @@
+<tr>
+  <td class="cell">
+    <% if routine_user.time %>
+      <%= link_to "#{routine_user.time.strftime("%H:%M")}", edit_routine_routine_user_path(routine_user.routine, routine_user) %>
+    <% else %>
+      -
+    <% end %>
+  </td>
+  <td class="cell">
+    <%= link_to "#{routine_user.routine.name}" ,routine_path(routine_user.routine_id) %>
+  </td>
+  <%= form_with(local: true) do |form| %>
+    <td class="cell">
+      <ul>
+        <% if routine_user.routine.check_list %>
+          <%= render partial: "check_items", locals: { check_list: routine_user.routine.check_list, form: form } %>
+        <% end %>
+      </ul>
+    </td>
+    <td class="cell">
+      <%= form.submit "SEND" %>
+    </td>
+  <% end %>
+</tr>

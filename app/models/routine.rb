@@ -2,7 +2,7 @@ class Routine < ApplicationRecord
   belongs_to :user
   has_many :users, through: :routine_users
   has_many :routine_users
-  has_one :check_lists
+  has_one :check_list
 
   def self.search(keyword)
     if keyword != ""

@@ -1,0 +1,13 @@
+<div class="contents row routine_index">
+  <table border cellpadding="4 8" class="index_table">
+    <tr>
+      <th class="cell">Time</th>
+      <th class="cell">Routine</th>
+      <th class="cell">CheckLists</th>
+      <th class="cell">Send</th>
+    </tr>
+    <% @routine_users.each do |routine_user| %>
+      <%= render partial: "routine", locals: { routine_user: routine_user } %>
+    <% end %>
+  </table>
+</div>

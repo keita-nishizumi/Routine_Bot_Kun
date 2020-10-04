@@ -1,0 +1,8 @@
+<div class="contents row">
+  <div class="container">
+    <h3>ルーティンの時刻と期間を設定</h3>
+    <%= form_with(url: routine_routine_users_path(params[:routine_id]), model: @routine_user, method: :post, local: true) do |form| %>
+      <%= render partial: 'form', locals: { form: form } %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="contents row">
+  <div class="container">
+    <h3>Create new routine</h3>
+    <%= form_with(local: true, model: @routine) do |form| %>
+      <%= render partial:'form', locals: { form: form } %>
+    <% end %>
+  </div>
+</div>

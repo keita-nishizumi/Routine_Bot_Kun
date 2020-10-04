@@ -1,0 +1,5 @@
+<%= render partial: "search", locals: { path: search_routines_path, placeholder_text: "your routines" } %>
+<div class="contents row routine_index">
+  <h1 class="grid-6 page_title">Search results</h1>
+  <%= render partial: "table", locals: { routines: @routines } %>
+</div>

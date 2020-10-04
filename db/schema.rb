@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_26_233756) do
+ActiveRecord::Schema.define(version: 2020_09_29_233439) do
+
+  create_table "check_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "check_list_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["check_list_id"], name: "index_check_items_on_check_list_id"
+  end
 
   create_table "check_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
@@ -54,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_09_26_233756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "check_items", "check_lists"
   add_foreign_key "check_lists", "routines"
   add_foreign_key "routine_users", "routines"
   add_foreign_key "routine_users", "users"
