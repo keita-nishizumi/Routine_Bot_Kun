@@ -1,16 +1,3 @@
 <div class="contents row">
-  <div class="container">
-    <h3><%= @routine.name %></h3>
-    <p><%= @routine.description %></p>
-    <%= link_to "Edit", edit_routine_path(@routine), class: "btn", data: { turbolinks: false } %>
-  </div>
-  <div class="container">
-    <h3>Check Lists</h3>
-    <ul>
-      <%= form_with(local: true) do |form| %>
-        <%= render partial: "routine_users/check_items", locals: { check_list: @routine.check_list, form: form } %>
-        <%= link_to "Edit", edit_routine_path(@routine), class: "btn", data: { turbolinks: false } %>
-      <% end %>
-    </ul>
-  </div>
+  <%= render partial: "show", locals: { routine: @routine } %>
 </div>

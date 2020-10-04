@@ -4,4 +4,5 @@
     <%= link_to "時刻と期間を設定する", new_routine_routine_user_path(@routine), method: :get %>
     <a class="btn" href="/">今日のルーティン一覧に戻る</a>
   </div>
+  <%= render partial: "show", locals: { routine: @routine } %>
 </div>

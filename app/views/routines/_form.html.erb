@@ -1,3 +1,4 @@
+<%= form.hidden_field :check_list_id, value: @routine.check_list&.id %>
 <%= form.text_field :name, placeholder: "Routine name" %>
 <%= form.text_area :description, placeholder: "Description", rows: "10"%>
 <% if params[:id] %>
