@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>Check Lists</h3>
+  <ul id="check_list">
+    <%= render partial: "routine_users/check_items", locals: { check_list: check_list} %>
+  </ul>
+  <a class="btn" id="add_check_item">Add row</a>
+  <a class="btn" id="delete_selected_items">Delete Selected</a>
+</div>

@@ -1,0 +1,8 @@
+<% if check_list&.check_items %>
+  <% check_list.check_items.each do |item| %>
+    <li>
+      <%= check_box_tag item.id, true, false, {class: "check_item"} %>
+      <%= label_tag item.id, item.text %>
+    </li>
+  <% end %>
+<% end %>
